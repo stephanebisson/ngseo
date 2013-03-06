@@ -1,5 +1,5 @@
 var express = require('express');
-var ngseo = require('./ngseo.js');
+var ngseo = require('../src/ngseo.js');
 var app = express();
 app.use(ngseo());
 
