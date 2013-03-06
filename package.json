@@ -1,0 +1,22 @@
+{
+  "name": "ngseo",
+  "version": "0.0.0",
+  "description": "expressjs middleware to enable server-side rendering of angularjs app when requested by a search bot",
+  "main": "ngseo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "angularjs",
+    "seo",
+    "expressjs"
+  ],
+  "author": "Stephane Bisson",
+  "license": "MIT",
+  "dependencies": {
+    "express": "3.x",
+    "phantomjs": "1.8",
+    "phantom": "0.4.1"
+  }
+}

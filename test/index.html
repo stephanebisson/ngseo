@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta name="fragment" content="!" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<script type="text/javascript">
+	angular.module('asdf', [])
+		.config(function($routeProvider){
+			$routeProvider
+				.when('/a', {templateUrl: 'a.html'})
+				.when('/b', {templateUrl: 'b.html'});
+		})
+		.controller('MyController', function($scope, $http){
+		$http.get('data.js').success(function(data){
+			$http.get('data.js').success(function(data){
+				$scope.message = "inner";
+			});
+		});
+	});
+</script>
+</head>
+<body ng-app="asdf" ng-controller="MyController">
+	<h1 id="title">{{message}}</h1>
+	<div ng-repeat="m in message">{{m}}</div>
+	<hr />
+	<ng-include src="'part.html'"></ng-include>
+	<hr />
+	<ng-view id="ngView"></ng-view>
+</body>
+</html
