@@ -1,8 +1,8 @@
 {
   "name": "ngseo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "expressjs middleware to enable server-side rendering of angularjs app when requested by a search bot",
-  "main": "ngseo.js",
+  "main": "src/ngseo.js",
   "scripts": {
     "test": "jasmine-node spec/"
   },
