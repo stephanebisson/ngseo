@@ -13,7 +13,6 @@ var extractHtml = function() {
 };
 
 module.exports = function(dir) {
-    dir = dir || '.';
     return function(req, res, next) {
         if (isCrawled(req)) {
         	phantom.create(function(ph) {
