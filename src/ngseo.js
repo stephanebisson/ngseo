@@ -12,13 +12,13 @@ var extractHtml = function() {
 	return document.querySelector('html').outerHTML;
 };
 
-module.exports = function() {
+module.exports = function(dir) {
+    dir = dir || '.';
     return function(req, res, next) {
-    	console.log(req.originalUrl);
         if (isCrawled(req)) {
         	phantom.create(function(ph) {
         		ph.createPage(function(page) {
-        			page.open('.' + req.path + '#' + getFragment(req), function(status) {
+        			page.open(dir + req.path + '#' + getFragment(req), function(status) {
         				page.evaluate(extractHtml, 
         					function(html) { res.send(html.replace(/ng-app=\".*?\"/,'')); ph.exit(); });
         			});
